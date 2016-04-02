@@ -1,0 +1,6 @@
+﻿[
+  {
+    "inputs": [ "Assets/Gildestyle.less" ],
+    "output": "Styles/Gildestyle.css"
+  }
+]
