@@ -95,7 +95,7 @@ namespace Orchard.Environment {
 
             var directories = context
                 .DirectoriesToBrowse
-                .SelectMany(folder => GetViewDirectories(folder, context.FileExtensionsToCompile));
+                .SelectMany(folder => GetViewDirectories(folder, context.FileExtensionsToCompile)).Where(d => d.IndexOf("node_modules") < 1);
 
             int directoryCount = 0;
             foreach (var viewDirectory in directories) {
@@ -152,6 +152,7 @@ namespace Orchard.Environment {
         }
 
         private static void GetViewDirectories(IVirtualPathProvider vpp, string directory, IEnumerable<string> extensions, ICollection<string> files) {
+            if (directory.IndexOf("node_modules") > 0) return;
             if (vpp.ListFiles(directory).Where(f => extensions.Any(e => f.EndsWith(e, StringComparison.OrdinalIgnoreCase))).Any()) {
                 files.Add(directory);
             }

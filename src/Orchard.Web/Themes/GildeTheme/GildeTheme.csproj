@@ -74,15 +74,13 @@
   <ItemGroup>
     <Content Include="Content\gildebg-indigo.jpg" />
     <Content Include="Content\gildebg-white.jpg" />
-    <Content Include="Recipies\CarouselImageRecipe.xml" />
-    <Content Include="Recipies\CarouselRecipe.xml" />
     <Content Include="Recipies\CarouselSetup.xml" />
     <Content Include="Scripts\Vendelscript.js" />
     <Content Include="Styles\Gildestyle.css" />
     <Content Include="Styles\Gildestyle.min.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
+    <Content Include="Views\Web.config" />
     <Content Include="Content\Web.config" />
     <Content Include="Theme.txt" />
     <Content Include="Theme.png" />
@@ -119,7 +117,9 @@
     <Compile Include="Providers\Layouts\LayoutShapes.cs" />
     <Compile Include="ResourceManifest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Styles\Web.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\BadgeOfHonor.cshtml" />
   </ItemGroup>
