@@ -1,64 +1,144 @@
-﻿body{
+﻿@gilde: rgb(183, 28, 28);
+@gilde-alpha: rgba(183,28,28,0.9);
+@gilde-alpha-half: rgba(183,28,28,0.5);
+@gilde-highlight: rgba(220, 18, 67, 0.75);
+@broken-white: rgba(255,255,255,0.9);
+@text-white: @broken-white;
+@text-white-highlight: #FFF;
+
+body.theme-GildeTheme {
     background-image: url(../Content/gildebg-white.jpg);
     background-size:cover;
     background-attachment: fixed;
-}
 
-.navbar {
-    //background-color: #3F51B5 !important;
-}
+   
+    .navbar-default {
+        background-color: @gilde-alpha;
+        color: @text-white;
 
-.layout-main {
-    padding-bottom:15px;
-}
-#layout-main-container {
-    background-color: rgba(230, 230, 230, .7);
-}
+       
+        .navbar-nav{
+            
 
-#footer a {
-    color: #065192;
-    text-decoration: none;
-}
+            a{
+                transition: all 1s ease;
+                background-color: rgba(0,0,0,0);
+                color: @text-white; 
+            }
+            a:hover{
+                background-color: @gilde-highlight;
+                color: @text-white-highlight;
+            }
+            .active>a, .open>a{ 
+                background-color: @gilde-highlight;
+                color: @text-white-highlight;
 
-@media all and (max-width: 767px) {
-    .widget-carouselwidget {
-        display:none;
+                .dropdown{
+                    background-color: @gilde-highlight;
+                    color: @text-white-highlight;
+                    transition: all 1s ease;
+                    a:hover{
+                        background-color: @gilde-highlight;
+                        color: @text-white-highlight;
+                    }
+                }
+            }
+        }
+        .navbar-brand{
+            color: @text-white-highlight;
+        } 
+    }
+
+    .dropdown-menu{
+        background-color: @gilde-alpha;
+        transition: all 1s ease;
+        a:hover{
+            background-color: @gilde-highlight;
+            color: @text-white-highlight;
+        }
+        >li>a{
+            background-color:  @gilde-alpha;
+        }
+    }
+
+    .layout-main {
+        padding-bottom:15px
+    }
+    #layout-main-container {
+        background-color: rgba(230, 230, 230, .7);
+    }
+
+    #footer a {
+        color: #065192;
+        text-decoration: none;
+    }
+
+    @media all and (max-width: 767px) {
+        .widget-carouselwidget {
+            display:none;
+        }
+
+        .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+            color: @text-white;
+        }
+    }
+
+    .widget-carouselwidget{
+        margin: 40px auto;
+        width:768px;
+        height: 350px;
+        position: relative;
+        background-color: @gilde-alpha;
+        -webkit-box-shadow: 5px 8px 17px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    5px 8px 17px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 5px 8px 17px 0px rgba(50, 50, 50, 0.75);
+
+        -moz-user-select: none;
+         -webkit-user-select: none;
+          -ms-user-select:none;
+           user-select:none;
+           -o-user-select:none;
+    }
+
+    #myCarousel{
+        width:768px;
+        height: 350px; 
+    }
+
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        width:768px;
+        max-height: 350px;
+        overflow:hidden;
+    }
+
+    .carousel-indicators{
+        bottom: 0px;
+
+        > li{
+            border: 1px solid @gilde-alpha;
+        }
+        .active{
+            background-color: @gilde-alpha-half;
+        }
+    }
+
+    .carousel-control {
+        color: @gilde-alpha;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    circle {
+      fill: rgba(255,255,255,0.7);
+    }
+
+    #toTop{
+        color: @gilde-alpha;
     }
 }
 
-.widget-carouselwidget{
-    margin: 40px auto;
-    width:768px;
-    height: 350px;
-    position: relative;
-    background-color: rgba(25, 25, 25, .7);
-    -webkit-box-shadow: 5px 8px 17px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    5px 8px 17px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 5px 8px 17px 0px rgba(50, 50, 50, 0.75);
-}
-
-#myCarousel{
-    width:768px;
-    height: 350px;
-}
-
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    width:768px;
-    max-height: 350px;
-    overflow:hidden;
-}
-
-.carousel-indicators{
-    bottom: 0px !important;
-
-    > li{
-        border: 1px solid #1976D2 !important;
-    }
-    .active{
-        background-color: #1976D2 !important;
-    }
-}
-
-.carousel-control {
-    color: #1976D2 !important;
-}
