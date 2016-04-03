@@ -19,4 +19,9 @@
       <Place Fields_Image="Content"/>
     </Match>
   </Match>
+  <Match ContentType="TileNavTile">
+    <Match DisplayType="Detail">
+      <Place Fields_NavigationUrl="Content"/>
+    </Match>
+  </Match>
 </Placement>

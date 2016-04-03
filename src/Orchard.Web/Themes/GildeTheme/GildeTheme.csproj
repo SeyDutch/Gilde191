@@ -112,9 +112,11 @@
     <Content Include="Assets\Gildestyle.less" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Providers\Layouts\TileNavLayout.cs" />
     <Compile Include="Providers\Layouts\CarouselLayout.cs" />
     <Compile Include="Providers\Layouts\CarouselLayoutForms.cs" />
     <Compile Include="Providers\Layouts\LayoutShapes.cs" />
+    <Compile Include="Providers\Layouts\TileNavLayoutForms.cs" />
     <Compile Include="ResourceManifest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery.easing.1.3.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TileNav-ProjectionWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-TileNavTile.Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

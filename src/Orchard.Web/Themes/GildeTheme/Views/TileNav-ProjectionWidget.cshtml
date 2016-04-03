@@ -1,0 +1,64 @@
+﻿@{
+    Style.Require("Gildestyle").AtHead();
+    var tag = Tag(Model, "article");
+}
+
+@tag.StartElement
+<header>
+    @Display(Model.Header)
+    @if (Model.Meta != null)
+    {
+        <div class="metadata">
+            @Display(Model.Meta)
+        </div>
+    }
+</header>
+
+<div id="myTileNav" class="tile-nav">
+
+    <div class="table">
+
+        @{
+            for (var i = 1; i <= Model.Items.Count; i += 2)
+            {
+                var tileContent = Model.Items[i - 1].Content;
+                var mUrl = tileContent.Items[0].Value;
+                var mName = tileContent.Items[1].Value;
+                var mColor = tileContent.Items[2].Value;
+
+                @: <div class="row">
+                
+                @: <div class=" span-6 cell"> <div class="navigation-tile" style="background-color:@mColor" data-navi="@mUrl.ToString()" data-color="@mColor">
+                @: <h2>@mName</h2>
+                @: </div></div>
+
+                if(Model.Items.Count > i)
+                {
+                    tileContent = Model.Items[i].Content;
+                    mUrl = tileContent.Items[0].Value;
+                    mName = tileContent.Items[1].Value;
+                    mColor = tileContent.Items[2].Value;
+
+                    @: <div class=" span-6 cell"> <div class="navigation-tile" style="background-color:@mColor" data-navi="@mUrl.ToString()" data-color="@mColor">
+                    @: <h2>@mName</h2>
+                    @: </div></div>
+        
+                }
+
+                
+                @: </div>
+                
+            }
+        }
+
+
+    </div>
+
+</div>
+@if (Model.Footer != null)
+{
+    <footer>
+        @Display(Model.Footer)
+    </footer>
+}
+@tag.EndElement
