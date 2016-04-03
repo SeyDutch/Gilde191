@@ -1,0 +1,10 @@
+﻿[
+  {
+    "inputs": [ "Assets/Contact.less" ],
+    "output": "Styles/Contact.css"
+  },
+  {
+     "inputs": [ "Assets/Gallery.less" ],
+     "output": "Styles/Gallery.css"
+  }
+]

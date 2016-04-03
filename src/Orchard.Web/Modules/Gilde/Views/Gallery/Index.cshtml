@@ -1,0 +1,50 @@
+﻿@model Gilde.ViewModels.GalleryViewModel
+
+@{
+    Style.Require("Gallery").AtFoot();
+    Script.Require("Slideshow").AtFoot();
+}
+
+    <div class="gallery-page">
+
+        <div class="control-container">
+            <div id="controls">
+                <button class="prev" disabled="disabled">Prev</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+
+        
+
+        <div id="rotate_controls" style="display:none;">
+            Change view
+            <button class="left">Left</button>
+            <button class="centre">Centre</button>
+            <button class="right">Right</button>
+        </div>
+
+        <div id="galleryview">
+            <ul id="galleryitemlist">
+
+                @{
+                    var iteration = 0;
+                    foreach (var m in Model.GalleryItems)
+                    {
+                        iteration++;
+                        var transAmt = iteration * 200 * -1;
+                        var zIdx = Model.GalleryItems.Count + 1 - iteration;
+                        @: <li style="transform: translate3d(0px, @(transAmt)px, @(transAmt)px); z-index: @(zIdx); opacity: 1;">
+                        @: <img src="@m.MediaUrl" alt="@m.Title" data-description="@m.Caption"/>
+                        @: </li>
+                    }
+                }
+               
+
+            </ul>
+        </div>
+
+        
+
+    </div>
+
+

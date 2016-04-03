@@ -1,0 +1,10 @@
+﻿Name: Gilde
+AntiForgery: enabled
+Author: Eric Fransen
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.91.
+Description: Module for Gilde St. Willibrordus
+Features:
+    Gilde:
+        Description: Gilde module with Gallery & Contact
