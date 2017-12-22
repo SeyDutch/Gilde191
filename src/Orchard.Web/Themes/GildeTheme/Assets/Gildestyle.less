@@ -1,15 +1,36 @@
 ﻿@gilde: rgb(183, 28, 28);
-@gilde-alpha: rgba(183,28,28,0.9);
-@gilde-alpha-half: rgba(183,28,28,0.5);
+@gilde-alpha: rgba(156,0,0,0.9);
+@gilde-alpha-half: rgba(156,0,0,0.5);
 @gilde-highlight: rgba(220, 18, 67, 0.75);
 @broken-white: rgba(255,255,255,0.9);
 @text-white: @broken-white;
 @text-white-highlight: #FFF;
 
 body.theme-GildeTheme {
-    background-image: url(../Content/gildebg-white.jpg);
+    background-image: url(../Content/bggilde.jpg);
     background-size:cover;
     background-attachment: fixed;
+    font-family: Arial;
+
+
+    h1 {
+        font-size: 1.5em;
+        padding: .2em .2em .2em .5em;
+    }
+
+    h2, h3{
+        font-size: 1.2em;
+        padding: .2em .2em .2em .5em;
+    }
+
+    h4{
+        padding: .2em .2em .2em .5em;
+        font-size: 1.2em;
+        background-color: @gilde-alpha;
+        color: @text-white;
+        font-weight: bold;
+        border-radius: .3em;
+    }
 
    
     .navbar-default {
@@ -22,7 +43,7 @@ body.theme-GildeTheme {
                 background-color: rgba(0,0,0,0);
                 color: @text-white; 
             }
-            a:hover{
+            a:hover{ 
                 background-color: @gilde-highlight;
                 color: @text-white-highlight;
             }
@@ -62,7 +83,7 @@ body.theme-GildeTheme {
         padding-bottom:15px
     }
     #layout-main-container {
-        background-color: rgba(230, 230, 230, .7);
+        background-color: #FFF; // rgba(230, 230, 230, .7);
     }
 
     #footer a {
@@ -120,7 +141,7 @@ body.theme-GildeTheme {
     }
 
     .carousel-control {
-        color: @gilde-alpha;
+        color: @gilde-alpha; 
     }
 
     
@@ -150,6 +171,7 @@ body.theme-GildeTheme {
                     h2{
                         margin:0px;
                         line-height:125px;
+                        color: @text-white-highlight;
                     }
                     
                 }
